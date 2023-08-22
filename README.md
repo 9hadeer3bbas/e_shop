@@ -1,6 +1,6 @@
 # eshop_app
 
-A new Flutter project.
+An E-Commerce Application
 
 | Feature  |  Coded?       | Description  |
 |----------|:-------------:|:-------------|
