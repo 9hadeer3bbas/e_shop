@@ -4,9 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../../../core/constant/colors/colors.dart';
 import '../../../../core/constant/constant.dart';
-import '../../../../core/functions/text_styles/text_styles.dart';
 import '../../../../core/shared/extentions/extentions.dart';
-import '../../../../core/shared/widgets/widgets.dart';
+import '../../../../core/shared/widgets/widgets_v1.dart';
 import '../../../controller/on_boarding/on_boarding_controller.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -14,16 +13,17 @@ import '../../../data/data_source/local/on_boarding/on_boarding.dart';
 import '../../../data/models/on_boarding/on_boarding.dart';
 import '../../widgets/on_boarding/custom_on_boarding_item.dart';
 
-class OnBoardingView extends StatelessWidget {
-  OnBoardingView({super.key});
+class OnBoardingEnglishView extends StatelessWidget {
+  OnBoardingEnglishView({super.key});
 
   final OnBoardingControllerImpl controller =
       Get.put(OnBoardingControllerImpl());
 
-  OnBoarding onBoarding = OnBoarding(title: "www");
+  
 
   @override
   Widget build(BuildContext context) {
+    OnBoarding onBoarding = OnBoarding(title: "www");
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
       body: SafeArea(
@@ -41,19 +41,19 @@ class OnBoardingView extends StatelessWidget {
                       controller: controller.boardingController,
                       padEnds: false,
                       onPageChanged: (int index) {
-                        if (index == boarding.length - 1) {
+                        if (index == boardingEn.length - 1) {
                           controller.movingPage(true);
                         } else {
                           controller.movingPage(false);
                         }
                       },
                       itemBuilder: (context, index) {
-                        onBoarding = boarding[index];
+                        onBoarding = boardingEn[index];
                         return CustomOnBoardingItem(
                           onBoarding: onBoarding,
                         );
                       },
-                      itemCount: boarding.length,
+                      itemCount: boardingEn.length,
                     ),
                   ),
                   Row(
@@ -64,7 +64,7 @@ class OnBoardingView extends StatelessWidget {
                         child: onBoarding.title != null
                             ? InkWell(
                                 onTap: () {
-                                  Get.to(GetFirstPageView());
+                                  Get.to(const GetFirstPageView());
                                 },
                                 child: CustomText(
                                   textDirection: TextDirection.ltr,
@@ -90,7 +90,7 @@ class OnBoardingView extends StatelessWidget {
                                     ),
                               ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       SmoothPageIndicator(
                         controller: controller.boardingController,
                         effect: ExpandingDotsEffect(
@@ -101,9 +101,9 @@ class OnBoardingView extends StatelessWidget {
                           expansionFactor: 4.w,
                           spacing: 40.0.w,
                         ),
-                        count: boarding.length,
+                        count: boardingEn.length,
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Container(
                         width: 100,
                         height: 50,

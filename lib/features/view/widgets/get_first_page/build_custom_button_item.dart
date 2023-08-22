@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/constant/colors/colors.dart';
 import '../../../../core/constant/constant.dart';
-import '../../../../core/shared/widgets/widgets.dart';
+import 'package:eshop_app/core/shared/widgets/widgets_v1.dart';
 import '../../../../core/shared/extentions/extentions.dart';
 
 class BuildCustomButtonItem extends StatelessWidget {

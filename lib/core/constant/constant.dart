@@ -60,17 +60,16 @@ class AppConstant {
   static String currentRouteApp = Get.currentRoute;
   static String previousRouteApp = Get.previousRoute;
 
-  static List<String> listOfIcons = [
-    //AppAssets.homeSelected,
-    //AppAssets.searchSelected,
-    //AppAssets.ordersSelected,
-    //AppAssets.settingsSelected
+  static List<String> listOfUserIcons = [
+    AppAssets.home,
+    AppAssets.cart,
+    AppAssets.notifications,
+    AppAssets.profile
   ];
-
-  static List<String> listOfStrings = [
-    'الرئيسية',
-    'شراء',
-    'طلباتي',
-    'الإعدادات',
+  static List<String> listOfCompanyIcons = [
+    AppAssets.home,
+    AppAssets.addProductPhoto,
+    AppAssets.notifications,
+    AppAssets.profile
   ];
 }

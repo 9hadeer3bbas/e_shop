@@ -1,11 +1,12 @@
 name: eshop_app
-description: IQuick app shows set of services for clients.
-publish_to: 'none' 
+description: E-Shop app is an E-Commerce application for all people around the world.
+
+publish_to: 'none'
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.19.6 <3.0.0'
+  sdk: '>=3.0.6 <4.0.0'
 
 dependencies:
   flutter:

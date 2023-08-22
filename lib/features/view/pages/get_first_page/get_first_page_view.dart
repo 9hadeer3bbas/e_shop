@@ -1,5 +1,5 @@
 import 'package:eshop_app/features/view/pages/auth/sign_in/sign_in.dart';
-import 'package:eshop_app/features/view/pages/auth/sign_up/sign_up.dart';
+import 'package:eshop_app/features/view/pages/auth/sign_up/sign_up_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 import '../../../../core/constant/app_assets/app_assets.dart';
 import '../../../../core/constant/colors/colors.dart';
 import '../../../../core/constant/constant.dart';
-import '../../../../core/constant/routes/routes.dart';
 import '../../../../core/shared/extentions/extentions.dart';
 
 import '../../widgets/get_first_page/build_custom_button_item.dart';
@@ -28,15 +27,15 @@ class GetFirstPageView extends StatelessWidget {
             ),
             SvgPicture.asset(
               AppAssets.appLogoPrimary,
-              fit: BoxFit.none,
-              width: context.screenWidth / 2,
-              height: context.screenHeight / 3,
+              fit: BoxFit.contain,
+              width: context.screenWidth / 3.5,
+              height: context.screenHeight / 3.5,
             ),
-            SizedBox(
-              height: context.screenHeight / 120,
+            const SizedBox(
+              height: 50.0,
             ),
             Center(
-                child: Text("الكثير من",
+                child: Text("lots of".tr,
                     style: ThemeHelper(context)
                         .textTheme
                         .displayLarge!
@@ -46,7 +45,7 @@ class GetFirstPageView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 BuildCustomTextItem(
-                  text: "المنتجات",
+                  text: "products".tr,
                   color: const Color(0xFF1E2126),
                   fontSize: AppConstant.fontSizeTwentyFour,
                 ),
@@ -54,7 +53,7 @@ class GetFirstPageView extends StatelessWidget {
                   width: AppConstant.spaceFive.w,
                 ),
                 BuildCustomTextItem(
-                  text: "و",
+                  text: "and".tr,
                   color: AppColors.primaryColor,
                   fontSize: AppConstant.fontSizeTwentyFour,
                 ),
@@ -62,7 +61,7 @@ class GetFirstPageView extends StatelessWidget {
                   width: AppConstant.spaceFive.w,
                 ),
                 BuildCustomTextItem(
-                  text: "الخدمات",
+                  text: "features".tr,
                   color: const Color(0xFF1E2126),
                   fontSize: AppConstant.fontSizeTwentyFour,
                 ),
@@ -72,15 +71,15 @@ class GetFirstPageView extends StatelessWidget {
               height: AppConstant.spaceTen.h,
             ),
             BuildCustomTextItem(
-              text: "ستجد كل ما تحتاجه معنا",
+              text: "you will find everything you need with us".tr,
               color: AppColors.lightGrayThreeColor,
-              fontSize: AppConstant.fontSizeTwentyFour,
+              fontSize: AppConstant.fontSizeEighteen,
             ),
             SizedBox(
-              height: context.screenHeight / 20,
+              height: 100.0.h,
             ),
             BuildCustomButtonItem(
-              text: 'ابدأ الأن',
+              text: 'start now'.tr,
               colorText: const Color(0xFFF0F3F8),
               colorButton: AppColors.primaryColor,
               onTapButton: () {
@@ -91,7 +90,7 @@ class GetFirstPageView extends StatelessWidget {
               height: context.screenHeight / 20,
             ),
             BuildCustomButtonItem(
-              text: 'تسجيل الدخول',
+              text: 'sign in'.tr,
               colorText: AppColors.primaryColor,
               colorButton: const Color(0xFFF0F3F8),
               onTapButton: () {

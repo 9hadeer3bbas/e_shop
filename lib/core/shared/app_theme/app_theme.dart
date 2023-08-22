@@ -60,7 +60,7 @@ class AppTheme {
       //splashColor: AppColors.secondaryColor,
       //highlightColor: AppColors.secondaryColor,
       //hoverColor: AppColors.secondaryColor,
-      hintColor: AppColors.grayColor,
+      hintColor: AppColors.greyColor,
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         backgroundColor: AppColors.whiteThreeColor,
         selectedIconTheme: const IconThemeData(

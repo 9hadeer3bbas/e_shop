@@ -2,7 +2,6 @@ import 'package:eshop_app/features/view/pages/get_first_page/get_first_page_view
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constant/routes/routes.dart';
 
 abstract class OnBoardingController extends GetxController {
   movingPage(bool isMoving);
@@ -29,6 +28,6 @@ class OnBoardingControllerImpl extends OnBoardingController {
     //     );
     //   }
     // });
-    Get.to(GetFirstPageView());
+    Get.to(const GetFirstPageView());
   }
 }

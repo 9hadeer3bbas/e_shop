@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../core/shared/widgets/widgets.dart';
+import '../../../../core/shared/widgets/widgets_v1.dart';
 import '../../../../core/shared/extentions/extentions.dart';
 
 class BuildCustomTextItem extends StatelessWidget {

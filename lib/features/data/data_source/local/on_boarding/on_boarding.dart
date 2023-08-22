@@ -5,16 +5,29 @@ import '../../../../../core/constant/app_assets/app_assets.dart';
 
 import '../../../models/on_boarding/on_boarding.dart';
 
-List<OnBoarding> boarding = [
+List<OnBoarding> boardingEn = [
   OnBoarding(
-    image: SvgPicture.asset(AppAssets.onBoarding1, fit: BoxFit.fill),
+    image: SvgPicture.asset(AppAssets.onBoarding1en, fit: BoxFit.fill),
     title: 'تخطى',
   ),
   OnBoarding(
-    image: SvgPicture.asset(AppAssets.onBoarding2, fit: BoxFit.fill),
+    image: SvgPicture.asset(AppAssets.onBoarding2en, fit: BoxFit.fill),
     title: 'تخطى',
   ),
   OnBoarding(
-    image: SvgPicture.asset(AppAssets.onBoarding3, fit: BoxFit.fill),
+    image: SvgPicture.asset(AppAssets.onBoarding3en, fit: BoxFit.fill),
+  ),
+];
+List<OnBoarding> boardingAr = [
+  OnBoarding(
+    image: SvgPicture.asset(AppAssets.onBoarding1ar, fit: BoxFit.fill),
+    title: 'تخطى',
+  ),
+  OnBoarding(
+    image: SvgPicture.asset(AppAssets.onBoarding2ar, fit: BoxFit.fill),
+    title: 'تخطى',
+  ),
+  OnBoarding(
+    image: SvgPicture.asset(AppAssets.onBoarding3ar, fit: BoxFit.fill),
   ),
 ];

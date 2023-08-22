@@ -8,7 +8,7 @@ import '../../functions/text_styles/text_styles.dart';
 import '../status_requests/status_requests.dart';
 
 class HandlingDataShow extends StatelessWidget {
-  final StatusRequest statusRequest;
+  final StatusRequest? statusRequest;
   final Widget widget;
   const HandlingDataShow(
       {Key? key, required this.statusRequest, required this.widget})
@@ -17,29 +17,31 @@ class HandlingDataShow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return statusRequest == StatusRequest.loading
-        ? Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Lottie.asset(
-                "assets/lottie/loading.json",
-                animate: true,
-                width: 120.w,
-                height: 120.h,
-              ),
-              Text(
-                "جاري التحميل",
-                style: textStyles(
-                  fontSize: 16.sp,
-                  foreground: Paint()
-                    ..shader = const LinearGradient(
-                      colors: AppColors.linerBlueColor,
-                    ).createShader(
-                      const Rect.fromLTWH(300.0, 300.0, 300.0, 300.0),
-                    ),
+        ? Center(
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Lottie.asset(
+                  "assets/lottie/loading.json",
+                  animate: true,
+                  width: 120.w,
+                  height: 120.h,
                 ),
-              ),
-            ],
-          )
+                Text(
+                  "جاري التحميل",
+                  style: textStyles(
+                    fontSize: 16.sp,
+                    foreground: Paint()
+                      ..shader = const LinearGradient(
+                        colors: AppColors.linerBlueColor,
+                      ).createShader(
+                        const Rect.fromLTWH(300.0, 300.0, 300.0, 300.0),
+                      ),
+                  ),
+                ),
+              ],
+            ),
+        )
         : statusRequest == StatusRequest.offlinefailure
             ? Center(
                 child: Lottie.asset(
@@ -64,6 +66,8 @@ class HandlingDataShow extends StatelessWidget {
                           height: 150.h,
                         ),
                       )
-                    : widget;
+                    : statusRequest == null
+                        ? widget
+                        : widget;
   }
 }

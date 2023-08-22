@@ -4,37 +4,65 @@ validationOnInput({
   required String value,
   required int min,
   required int max,
-  required String type,
+  String? type,
 }) {
-  if (type == "Username") {
+  if (type == "FirstName") {
     if (!GetUtils.isUsername(value)) {
-      return "يجب أن تدخل اسم المستخدم";
+      return "The first name field is required";
+    }
+    if (GetUtils.isHTML(value)) {
+      return "You can not enter this the expresssion";
     }
   }
+
+  if (type == "LastName") {
+    if (!GetUtils.isUsername(value)) {
+      return "The last name field is required";
+    }
+    if (GetUtils.isHTML(value)) {
+      return "You can not enter this the expresssion";
+    }
+  }
+
   if (type == "Email") {
     if (!GetUtils.isEmail(value)) {
-      return "يجب أن تدخل البريد الإلكتروني";
+      return "The email field is required";
+    }
+    if (GetUtils.isHTML(value)) {
+      return "You can not enter this the expresssion";
     }
   }
-  if (type == "Phone") {
-    if (!GetUtils.isPhoneNumber(value)) {
-      return "يجب أن تدخل رقم الموبايل";
-    }
-  }
+
   if (type == "Password") {
     if (!value.contains(RegExp('[0-9a-zA-Z]|[@]|[%]|[&]|[#]|[=]|[+]|[-]'))) {
-      return "يجب ان تدخل كلمة المرور";
+      return "The password field is required";
     }
+    if (GetUtils.isHTML(value)) {
+      return "You can not enter this the expresssion";
+    }
+  }
+
+  if (type == "search") {
+    if (GetUtils.isHTML(value)) {
+      return "You can not enter this the expresssion";
+    }
+    if (value.isEmpty) {
+      return "this the field is required";
+    }
+  }
+  
+  if (GetUtils.isHTML(value)) {
+    return "You can not enter this the expresssion";
   }
 
   if (value.isEmpty) {
-    return "لا يمكن أن يكون هذا الحقل فارغ";
+    return "this the field is required";
   }
 
   if (value.length < min) {
-    return "لا يمكن أن يكون أقل من $min";
+    return "the field can't be lower than $min";
   }
   if (value.length > max) {
-    return "لا يمكن أن يكون أكثر من $max";
+    return "the field can't be larger than $max";
   }
 }
