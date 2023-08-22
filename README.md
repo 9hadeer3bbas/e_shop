@@ -1,6 +1,6 @@
 # eshop_app
 
-An E-Commerce Application
+E-Commerce Application
 
 | Feature  |  Coded?       | Description  |
 |----------|:-------------:|:-------------|
